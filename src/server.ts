@@ -37,6 +37,6 @@ app.register(usersRoutes);
 
 const port = Number(process.env.PORT) || 3333;
 
-app.listen({ port: isNaN(port) ? 3333 : port }).then(() => {
+app.listen({ host: "0.0.0.0", port: isNaN(port) ? 3333 : port }).then(() => {
   console.log(`🚀 HTTP Server Running on port ${port}`);
 });
