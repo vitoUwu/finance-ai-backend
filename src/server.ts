@@ -35,6 +35,8 @@ app.register(usersRoutes);
 // Configurar jobs
 // setupCronJobs();
 
-app.listen({ port: 3333 }).then(() => {
-  console.log("🚀 HTTP Server Running on port 3333");
+const port = Number(process.env.PORT) || 3333;
+
+app.listen({ port: isNaN(port) ? 3333 : port }).then(() => {
+  console.log(`🚀 HTTP Server Running on port ${port}`);
 });
